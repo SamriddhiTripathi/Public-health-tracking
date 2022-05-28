@@ -1,0 +1,219 @@
+<html>
+<head>
+<title>Public Health Tracking</title>
+<style>
+.container{
+width:1000px;height:50px;border-bottom:3px solid black;margin:0 auto;
+}
+.col{
+width:1000px;height:50px;background-color:gray;text-align:center;font-size:34;
+}
+.table{
+border:1px solid blue;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="col"><p><b>Public Health Tracking</b></p></div>
+<div class="mySlides">
+<div class="numbertext">1/3</div>
+<img src="C:\Users\asus\Desktop\TrackingBadge_vfinal.png" style="width:100%">
+<h1>Environmental Public Health Tracking Network</h1>
+<p>Local health departments have a number of resources 
+available to gain an understanding of the community in 
+which it serves, however, sometimes the data and the 
+numbers just aren’t available. When it comes time to 
+decide ways to ensure a community is thriving and healthy, 
+it is important to find those numbers and data so the 
+department can address the most pressing issues first.
+
+The partnership between NEHA and the CDC is creating a 
+solution that many local health departments face when it 
+comes to lacking data.  The Environmental Public Health 
+Tracking network is a collection of data from environmental 
+hazards to human health effects surveillance. With 26 state 
+and local health departments already providing their data to 
+the over-arching network, it is already seeing an increase in 
+use.</p>
+</div>
+<div class="mySlides">
+<div class="numbertext">2/3</div>
+<img src="C:\Users\asus\Desktop\9780415584715.webp" style="width:100%">
+<h2>Environmental Tracking for Public Health Surveillance</h2>
+<p>Satellite imagery and data are widely used in public health 
+surveillance to provide early warning of disease outbreaks and 
+for averting pandemics. Convergence of these technologies began 
+in the 1970s and has gained wide acceptance in the 21st Century.
+
+Environmental Tracking for Public Health Surveillance focuses on 
+the expanding use of satellite sensor imagery and long-term 
+spectral measurements for assessing and modelling Earth’s 
+environments in context of public health surveillance. It 
+addresses vector-borne, air-borne, water-borne, and zoonotic 
+diseases, and explores analytical methods for forecasting 
+environmental conditions and their potential for consequent disease 
+outbreaks. Infectious and contagious diseases are of particular 
+interest in this volume because once parasite-vector-human host 
+pathways are triggered by favourable biological circumstances, 
+pandemic diseases can spread to global scale in a matter of hours. 
+The chapters advance readers through three sets of material. Part I 
+reviews the 1970-2012 history of satellite Earth-science surveillance 
+technology that led to linking natural environments to human diseases, 
+and more generally to public health applications.
+</p>
+</div>
+<div class="mySlides">
+<div class="numbertext">3/3</div>
+<img src="C:\Users\asus\Desktop\9780367572761.jpg" style="width:100%">
+<h3>Environmental Policy and Public Health</h3>
+<p>As with the first edition, this second edition describes how 
+environmental health policies are developed, the statutes and other 
+policies that have evolved to address public health concerns associated 
+with specific environmental hazards, and the public health foundations 
+of the policies. It lays out policies for what is considered the major 
+environmental physical hazards to human health. Specifically, the authors 
+describe hazards from air, water, food, hazardous substances, and wastes. 
+To this list the authors have added the additional concerns from climate 
+change, tobacco products, genetically-modified organisms, environment-
+related diseases, energy production, biodiversity and species endangerment, 
+and the built environment. And as with the first edition, histories of 
+policymaking for specific environmental hazards are portrayed. This edition 
+differs from its antecedent in three significant themes. Global perspectives 
+are added to chapters that describe specific environmental hazards, e.g., 
+air pollution policies in China and India. Also there is the material on the 
+consequences of environmental hazards on both human and ecosystem health. 
+Additionally readers are provided with information about interventions that 
+policymakers and individuals can consider in mitigating or preventing specific 
+environmental hazards.
+</div>
+</div>
+<script type="text/javascript">
+function BuildChart(labels, values, chartTitle) {
+  var ctx = document.getElementById("myChart").getContext('2d');
+  var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels, // Our labels
+      datasets: [{
+        label: chartTitle, // Name the series
+        data: values, // Our values
+        backgroundColor: [ // Specify custom colors
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
+        ],
+        borderColor: [ // Add custom color borders
+          'rgba(255,99,132,1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 1 // Specify bar border width
+      }]
+    },
+    options: {
+      responsive: true, // Instruct chart js to respond nicely.
+      maintainAspectRatio: false, // Add to prevent default behavior of full-width/height 
+    }
+  });
+  return myChart;
+}
+var table = document.getElementById('dataTable');
+var json = []]; // First row needs to be headers 
+var headers =[];
+for (var i = 0; i < table.rows[0].cells.length; i++) {
+  headers[i] = table.rows[0].cells[i].innerHTML.toLowerCase().replace(/ /gi, '');
+}
+
+// Go through cells 
+for (var i = 1; i < table.rows.length; i++) {
+  var tableRow = table.rows[i];
+  var rowData = {};
+  for (var j = 0; j < tableRow.cells.length; j++) {
+    rowData[headers[j]] = tableRow.cells[j].innerHTML;
+  }
+
+  json.push(rowData);
+}
+
+document.write(json);
+var labels = json.map(function (e) {
+  return e.year;
+});
+document.write(labels); // ["2016", "2017", "2018", "2019"]
+
+// Map JSON values back to values array
+var values = json.map(function (e) {
+  return e.Interest in health;
+});
+document.write(values);
+var chart = BuildChart(labels, values, "Interest in health");
+</script>
+<div class="chart">
+  <canvas id="myChart"></canvas>
+</div>
+<table class="table" id="dataTable">
+  <thead>
+    <th>Year </th>
+    <th>Interest in health </th>
+    <th>Numbers of peoples come </th>
+    <th>profit</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2016 </td>
+      <td>10 </td>
+      <td>200 </td>
+      <td>89</td>
+    </tr>
+    <tr>
+      <td>2017 </td>
+      <td>25 </td>
+      <td>550 </td>
+      <td>225</td>
+    </tr>
+    <tr>
+      <td>2018 </td>
+      <td>55 </td>
+      <td>1200 </td>
+      <td>600</td>
+    </tr>
+    <tr>
+      <td>2019 </td>
+      <td>120 </td>
+      <td>2450 </td>
+      <td>1100</td>
+    </tr>
+  </tbody>
+</table>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyA9MFEzZuXle0a39NnsWipgyx-pLKl5h4Y",
+    authDomain: "public-health-tracking.firebaseapp.com",
+    projectId: "public-health-tracking",
+    storageBucket: "public-health-tracking.appspot.com",
+    messagingSenderId: "38406332841",
+    appId: "1:38406332841:web:0087cb28f848b2aa9e24b8",
+    measurementId: "G-RZ4XXN0JVM"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+</html>
